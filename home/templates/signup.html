@@ -1,0 +1,29 @@
+<!-- myapp/templates/myapp/signup.html -->
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'home/style.css' %}" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Sign Up</h2>
+      <form method="post" action="{% url 'signup' %}">
+        {% csrf_token %}
+        {{ form.first_name.label_tag }} {{ form.first_name }}
+        {{ form.last_name.label_tag }} {{ form.last_name }}
+        {{ form.username.label_tag }} {{ form.username }}
+        {{ form.major.label_tag }} {{ form.major }}
+        {{ form.job_title.label_tag }} {{ form.job_title }}
+        {{ form.password.label_tag }} {{ form.password }}
+      
+        <button type="submit">Sign Up</button>
+    </form>
+      <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    </div>
+  </body>
+</html>

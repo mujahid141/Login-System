@@ -15,7 +15,7 @@ def signup(request):
     else:
         form = SignUpForm()
 
-    return render(request, 'home.html', {'form': form})
+    return render(request, 'signup.html', {'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -23,11 +23,11 @@ def user_login(request):
         if form.is_valid():
             user = form.get_user()
             # Log in the user or perform other necessary actions
-            return HttpResponse('home.html')  # Redirect to your desired URL after successful login
+            return render('home.html')  # Redirect to your desired URL after successful login
     else:
         form = AuthenticationForm()
 
-    return render(request, 'home.html', {'form': form})
+    return render(request, 'login.html', {'form': form})
 
 def home(request):
     return render(request, 'home.html')

@@ -5,13 +5,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'home/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'home/button.css' %}" />
     <title>Home</title>
   </head>
   <body>
     <div class="container">
       <h2>Welcome to the Home Page</h2>
+     
       <!-- Add your content here -->
     </div>
+    <div class="button-container">
+      <a href="{% url 'login' %}" class="login-button">Login</a>
+      <a href="{% url 'signup' %}" class="signup-button">Signup</a>
+  </div>
   </body>
 </html>
